@@ -1,0 +1,8 @@
+[
+  { "id": "hungry", "ml": "എനിക്ക് വിശക്കുന്നു", "roman": "enikku vishakkunnu", "en": "I'm hungry" },
+  { "id": "going-home", "ml": "ഞാൻ വീട്ടിൽ പോകുന്നു", "roman": "njaan veettil pokunnu", "en": "I'm going home" },
+  { "id": "your-name", "ml": "നിന്റെ പേര് എന്താ?", "roman": "ninte peru enthaa", "en": "What's your name?" },
+  { "id": "want-tea", "ml": "എനിക്ക് ചായ വേണം", "roman": "enikku chaaya venam", "en": "I want tea" },
+  { "id": "how-are-you", "ml": "സുഖമാണോ?", "roman": "sukhamaano", "en": "Are you well?" },
+  { "id": "didnt-understand", "ml": "എനിക്ക് മനസ്സിലായില്ല", "roman": "enikku manassilaayilla", "en": "I didn't understand" }
+]

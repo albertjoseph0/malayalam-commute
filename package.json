@@ -1,0 +1,8 @@
+{
+  "name": "malayalam-commute",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:grader": "node scripts/grader-test.mjs"
+  }
+}
