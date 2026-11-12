@@ -3,6 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test:grader": "node scripts/grader-test.mjs"
+    "test:grader": "NODE_USE_ENV_PROXY=1 node scripts/grader-test.mjs"
   }
 }

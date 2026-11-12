@@ -2,11 +2,11 @@
 // Does the Decisions API grade spoken Malayalam usefully?
 //
 // For each phrase this synthesises five attempts and grades each one:
-//   correct      the phrase, spoken in Malayalam        -> should pass
-//   wrong-phrase a different Malayalam phrase           -> should fail, language malayalam
-//   english      the English translation                -> should fail, language english
-//   anglicised   the romanisation read as English text  -> pronunciation should drop
-//   silence      near-silent audio                      -> should fail, language silence
+//   correct      the phrase, spoken in Malayalam        -> pass
+//   wrong-phrase a different Malayalam phrase           -> wrong
+//   english      the English translation                -> english
+//   anglicised   the romanisation read as English text  -> anything but pass
+//   silence      near-silent audio                      -> silence
 //
 // Clips are cached in test-output/clips so you can listen to the voice too.
 //
@@ -24,15 +24,26 @@ const clipDir = join(root, "test-output", "clips");
 const phrases = JSON.parse(await readFile(join(root, "content", "phrases.json"), "utf8"));
 
 const models = await listModels();
-const ttsModel =
-  process.env.TTS_MODEL ??
-  models.filter((m) => /tts/i.test(m)).sort().reverse().find((m) => /flash/i.test(m)) ??
-  models.find((m) => /tts/i.test(m));
-if (!ttsModel) throw new Error(`No speech model found. Available: ${models.join(", ")}`);
+// Speech models to try in order; when one runs out of daily quota, move on.
+const ttsModels = process.env.TTS_MODEL
+  ? [process.env.TTS_MODEL]
+  : models.filter((m) => /tts/i.test(m)).sort().reverse();
+if (!ttsModels.length) throw new Error(`No speech model found. Available: ${models.join(", ")}`);
 if (!models.includes("gemini-decision-1")) {
   console.warn("Warning: gemini-decision-1 is not in this key's model list; the grading calls may fail.");
 }
-console.log(`Speech model: ${ttsModel}\n`);
+
+async function say(text) {
+  while (ttsModels.length) {
+    try {
+      return await speak(text, { model: ttsModels[0] });
+    } catch (err) {
+      if (!err.dailyQuota) throw err;
+      console.warn(`  (${ttsModels.shift()} is out of daily quota)`);
+    }
+  }
+  throw new Error("All speech models are out of daily quota.");
+}
 
 await mkdir(clipDir, { recursive: true });
 
@@ -48,13 +59,11 @@ const rows = [];
 for (const [i, phrase] of phrases.entries()) {
   const other = phrases[(i + 1) % phrases.length];
   const attempts = {
-    correct: () => speak(phrase.ml, { model: ttsModel }),
-    "wrong-phrase": () => speak(other.ml, { model: ttsModel }),
-    english: () => speak(phrase.en, { model: ttsModel }),
+    correct: () => say(phrase.ml),
+    "wrong-phrase": () => say(other.ml),
+    english: () => say(phrase.en),
     anglicised: () =>
-      speak(`Read this aloud as an American English speaker would, with English sounds: ${phrase.roman}`, {
-        model: ttsModel,
-      }),
+      say(`Read this aloud as an American English speaker would, with English sounds: ${phrase.roman}`),
     silence: async () => silenceWav(),
   };
   for (const [kind, make] of Object.entries(attempts)) {
@@ -67,8 +76,8 @@ for (const [i, phrase] of phrases.entries()) {
     const r = rows.at(-1);
     console.log(
       r.error
-        ? `${r.phrase.padEnd(18)} ${r.kind.padEnd(13)} ERROR ${r.error}`
-        : `${r.phrase.padEnd(18)} ${r.kind.padEnd(13)} said=${r.saidTarget.toFixed(2)}  lang=${r.language.padEnd(9)} (${r.languageConfidence.toFixed(2)})  pron=${r.pronunciation.toFixed(2)}/3  fluency=${r.fluency.toFixed(2)}/2`,
+        ? `${r.phrase.padEnd(18)} ${r.kind.padEnd(13)} ERROR ${r.error.split("\n")[0]}`
+        : `${r.phrase.padEnd(18)} ${r.kind.padEnd(13)} ${r.verdict.padEnd(8)} lang=${r.language.padEnd(9)} (${r.languageConfidence.toFixed(2)})  same=${r.same.toFixed(2)}  pron=${r.pronunciation === null ? "-" : r.pronunciation.toFixed(2) + "/3"}`,
     );
   }
 }
@@ -77,15 +86,15 @@ for (const [i, phrase] of phrases.entries()) {
 const ok = rows.filter((r) => !r.error);
 const by = (kind) => ok.filter((r) => r.kind === kind);
 const rate = (list, test) => (list.length ? `${list.filter(test).length}/${list.length}` : "n/a");
-const mean = (list, key) => (list.length ? (list.reduce((s, r) => s + r[key], 0) / list.length).toFixed(2) : "n/a");
 
 console.log("\nSummary");
-console.log(`  correct accepted (said > 0.7):            ${rate(by("correct"), (r) => r.saidTarget > 0.7)}`);
-console.log(`  wrong phrase rejected (said < 0.3):       ${rate(by("wrong-phrase"), (r) => r.saidTarget < 0.3)}`);
-console.log(`  English rejected and labelled english:    ${rate(by("english"), (r) => r.saidTarget < 0.3 && r.language === "english")}`);
-console.log(`  silence labelled silence:                 ${rate(by("silence"), (r) => r.language === "silence")}`);
-console.log(`  mean pronunciation, correct vs anglicised: ${mean(by("correct"), "pronunciation")} vs ${mean(by("anglicised"), "pronunciation")}`);
-console.log(`  errors:                                   ${rows.length - ok.length}/${rows.length}`);
+console.log(`  correct -> pass:              ${rate(by("correct"), (r) => r.verdict === "pass")}`);
+console.log(`  wrong phrase -> wrong:        ${rate(by("wrong-phrase"), (r) => r.verdict === "wrong")}`);
+console.log(`  English -> english:           ${rate(by("english"), (r) => r.verdict === "english")}`);
+console.log(`  silence -> silence:           ${rate(by("silence"), (r) => r.verdict === "silence")}`);
+console.log(`  anglicised -> not a pass:     ${rate(by("anglicised"), (r) => r.verdict !== "pass")}`);
+console.log(`  false passes (any non-correct clip passing): ${rate(ok.filter((r) => r.kind !== "correct"), (r) => r.verdict === "pass")}`);
+console.log(`  errors:                       ${rows.length - ok.length}/${rows.length}`);
 
 await writeFile(join(root, "test-output", "grader-results.json"), JSON.stringify(rows, null, 2));
 console.log("\nFull results: test-output/grader-results.json; clips: test-output/clips/");
