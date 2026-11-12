@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14110f">
+<title>Malayalam Commute</title>
+<style>
+  :root {
+    --bg: #f6f1ea; --fg: #1d1915; --muted: #6d645a; --line: #ddd3c6;
+    --accent: #b4441f; --accent-fg: #fff; --ok: #2f7d4f; --warn: #a36a00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #14110f; --fg: #f1ebe3; --muted: #a2978a; --line: #342d27; --accent: #e2703f; --accent-fg: #14110f; --ok: #6cc08c; --warn: #e0a640; }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 17px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex; flex-direction: column; align-items: center;
+    padding: max(20px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom));
+  }
+  header { width: 100%; max-width: 520px; display: flex; justify-content: space-between; align-items: baseline; }
+  h1 { font-size: 1rem; margin: 0; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  #count { color: var(--muted); font-variant-numeric: tabular-nums; }
+  main { flex: 1; width: 100%; max-width: 520px; display: flex; flex-direction: column; justify-content: center; gap: 28px; text-align: center; }
+  #phase { font-size: .95rem; color: var(--muted); min-height: 1.5em; }
+  #phase[data-kind="listen"] { color: var(--accent); font-weight: 600; }
+  #phase[data-kind="pass"] { color: var(--ok); font-weight: 600; }
+  #phase[data-kind="miss"] { color: var(--warn); font-weight: 600; }
+  #card { min-height: 9.5rem; display: flex; flex-direction: column; justify-content: center; gap: 6px; }
+  #en { font-size: 1.5rem; font-weight: 600; text-wrap: balance; }
+  #ml { font-size: 1.9rem; line-height: 1.5; }
+  #roman { color: var(--muted); font-style: italic; }
+  #meter { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+  #level { height: 100%; width: 0; background: var(--accent); transition: width 80ms linear; }
+  button {
+    font: inherit; font-size: 1.25rem; font-weight: 600; border: 0; border-radius: 999px;
+    padding: 22px; width: 100%; background: var(--accent); color: var(--accent-fg); cursor: pointer;
+  }
+  button.stop { background: transparent; color: var(--fg); border: 2px solid var(--line); }
+  #note { color: var(--muted); font-size: .9rem; min-height: 2.9em; }
+</style>
+</head>
+<body>
+<header><h1>Malayalam Commute</h1><span id="count"></span></header>
+<main>
+  <div id="phase"></div>
+  <div id="card">
+    <div id="en">Practice speaking Malayalam</div>
+    <div id="ml"></div>
+    <div id="roman"></div>
+  </div>
+  <div id="meter" aria-hidden="true"><div id="level"></div></div>
+  <button id="go">Start session</button>
+  <div id="note">Tap once, then it runs by voice. Keep this page open and the screen on.</div>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>

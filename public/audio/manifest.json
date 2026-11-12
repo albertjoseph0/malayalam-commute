@@ -1,0 +1,198 @@
+{
+  "ml/how-are-you.wav": {
+    "text": "സുഖമാണോ?",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "en/how-are-you.wav": {
+    "text": "How do you say: Are you well?",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "ml/im-fine.wav": {
+    "text": "എനിക്ക് സുഖമാണ്",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "en/im-fine.wav": {
+    "text": "How do you say: I'm fine",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "ml/hungry.wav": {
+    "text": "എനിക്ക് വിശക്കുന്നു",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "en/hungry.wav": {
+    "text": "How do you say: I'm hungry",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "ml/want-tea.wav": {
+    "text": "എനിക്ക് ചായ വേണം",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "en/want-tea.wav": {
+    "text": "How do you say: I want tea",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "ml/dont-want.wav": {
+    "text": "എനിക്ക് വേണ്ട",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "en/dont-want.wav": {
+    "text": "How do you say: I don't want it",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "ml/little-enough.wav": {
+    "text": "കുറച്ച് മതി",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "en/little-enough.wav": {
+    "text": "How do you say: A little is enough",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "ml/didnt-understand.wav": {
+    "text": "എനിക്ക് മനസ്സിലായില്ല",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "en/didnt-understand.wav": {
+    "text": "How do you say: I didn't understand",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "ml/dont-know.wav": {
+    "text": "എനിക്ക് അറിയില്ല",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "en/dont-know.wav": {
+    "text": "How do you say: I don't know",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "en/did-you-eat.wav": {
+    "text": "How do you say: Did you eat?",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "cue/welcome.wav": {
+    "text": "Let's practice your Malayalam.",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "cue/new.wav": {
+    "text": "New phrase. Listen.",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "cue/good.wav": {
+    "text": "Good.",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "cue/sounds.wav": {
+    "text": "Right words. Listen to the sounds once more.",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "cue/notquite.wav": {
+    "text": "Not quite. Listen.",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "cue/repeat.wav": {
+    "text": "Now repeat after me.",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "cue/malayalam.wav": {
+    "text": "Try it in Malayalam.",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "cue/nohear.wav": {
+    "text": "I didn't hear you. Try again.",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "cue/done.wav": {
+    "text": "That's the session. See you next time.",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "ml/what-doing.wav": {
+    "text": "എന്നാ ചെയ്യുവാ?",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "ml/whats-new.wav": {
+    "text": "എന്നാ ഉണ്ട് വിശേഷം?",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "ml/i-ate.wav": {
+    "text": "ഞാൻ കഴിച്ചു",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "ml/tasty.wav": {
+    "text": "നല്ല രുചിയുണ്ട്",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "en/i-ate.wav": {
+    "text": "How do you say: I ate",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "en/speak-slowly.wav": {
+    "text": "How do you say: Can you speak slowly?",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "ml/what-happened.wav": {
+    "text": "എന്നാ പറ്റി?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "ml/had-coffee.wav": {
+    "text": "കാപ്പി കുടിച്ചോ?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "ml/did-you-eat.wav": {
+    "text": "ചോറുണ്ടോ?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "ml/say-again.wav": {
+    "text": "ഒന്നൂടെ പറയാമോ?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "ml/speak-slowly.wav": {
+    "text": "പതുക്കെ പറയാമോ?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "ml/took-medicine.wav": {
+    "text": "മരുന്ന് കഴിച്ചോ?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "ml/coming-home.wav": {
+    "text": "ഞാൻ വീട്ടിലേക്ക് വരുവാ",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "ml/call-tomorrow.wav": {
+    "text": "ഞാൻ നാളെ വിളിക്കാം",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "en/whats-new.wav": {
+    "text": "How do you say: What's new?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "en/what-doing.wav": {
+    "text": "How do you say: What are you doing?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "en/what-happened.wav": {
+    "text": "How do you say: What happened?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "en/had-coffee.wav": {
+    "text": "How do you say: Did you have your coffee?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "en/tasty.wav": {
+    "text": "How do you say: It's tasty",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "en/say-again.wav": {
+    "text": "How do you say: Can you say that again?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "en/took-medicine.wav": {
+    "text": "How do you say: Did you take your medicine?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "en/coming-home.wav": {
+    "text": "How do you say: I'm coming home",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "en/call-tomorrow.wav": {
+    "text": "How do you say: I'll call tomorrow",
+    "model": "gemini-3.8-flash-lite-tts"
+  }
+}
