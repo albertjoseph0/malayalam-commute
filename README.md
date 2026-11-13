@@ -28,9 +28,10 @@ GEMINI_API_KEY=your-key
 Then:
 
 ```bash
-npm install
 npm start
 ```
+
+Nothing needs installing to run it; `npm install` is only for the tests.
 
 Open http://localhost:8787 in Chrome and allow the microphone. Browsers only
 allow the microphone on `localhost` or over HTTPS, so using this on a phone
@@ -83,10 +84,11 @@ voice.
   built from the API documentation and tested against a stand-in server that
   speaks the same message format. Whether the tutor's Malayalam is natural is
   also unchecked.
-- **The grader has only been measured on synthesised speech.** It reliably
-  rejects an unrelated phrase, English, and silence. It does not reliably tell
-  apart sentences that differ by one word or one ending, so it will sometimes
-  accept a near-miss and sometimes reject a correct answer that resembles
-  another phrase in the lesson.
+- **The grader has only been measured on synthesised speech.** There it accepts
+  the correct phrase and rejects a different lesson phrase, English, and
+  silence. It does not reliably catch a sentence that is one word or one ending
+  away from the target (about half slip through), so small grammar slips can be
+  marked correct. For the same reason the lesson avoids pairs of phrases that
+  differ by a single word, such as "ചോറുണ്ടോ?" next to "അമ്മ ചോറുണ്ടോ?".
 - The phrases have not been checked by a native speaker.
 - The voices speak standard Malayalam, not with a Kottayam accent.

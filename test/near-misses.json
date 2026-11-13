@@ -19,10 +19,6 @@
     "ml": "ഞാൻ കഴിച്ചില്ല",
     "en": "I didn't eat"
   },
-  "took-medicine": {
-    "ml": "മരുന്ന് വേണോ?",
-    "en": "Do you want medicine?"
-  },
   "im-fine": {
     "ml": "എനിക്ക് സുഖമില്ല",
     "en": "I'm not well"
@@ -43,10 +39,6 @@
     "ml": "മഴ പെയ്യുന്നുണ്ട്",
     "en": "It's raining"
   },
-  "how-are-you": {
-    "ml": "പുസ്തകം എവിടെ?",
-    "en": "Where is the book?"
-  },
   "where-amma": {
     "ml": "അമ്മ എവിടെ പോയി?",
     "en": "Where did Amma go?"
@@ -58,5 +50,13 @@
   "achan-medicine": {
     "ml": "അച്ഛൻ ചോറുണ്ടോ?",
     "en": "Achan, did you eat?"
+  },
+  "amma-eat": {
+    "ml": "അമ്മ ചായ കുടിച്ചോ?",
+    "en": "Amma, did you drink tea?"
+  },
+  "achan-well": {
+    "ml": "അച്ഛന് സുഖമില്ലേ?",
+    "en": "Achan, aren't you well?"
   }
 }

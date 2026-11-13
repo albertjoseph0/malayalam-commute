@@ -1,12 +1,4 @@
 {
-  "ml/how-are-you.wav": {
-    "text": "സുഖമാണോ?",
-    "model": "gemini-3.8-flash-tts"
-  },
-  "en/how-are-you.wav": {
-    "text": "How do you say: Are you well?",
-    "model": "gemini-3.8-flash-tts"
-  },
   "ml/im-fine.wav": {
     "text": "എനിക്ക് സുഖമാണ്",
     "model": "gemini-3.8-flash-tts"
@@ -63,10 +55,6 @@
     "text": "How do you say: I don't know",
     "model": "gemini-3.8-flash-tts"
   },
-  "en/did-you-eat.wav": {
-    "text": "How do you say: Did you eat?",
-    "model": "gemini-3.8-flash-tts"
-  },
   "cue/welcome.wav": {
     "text": "Let's practice your Malayalam.",
     "model": "gemini-3.8-flash-tts"
@@ -103,10 +91,6 @@
     "text": "That's the session. See you next time.",
     "model": "gemini-3.8-flash-tts"
   },
-  "ml/what-doing.wav": {
-    "text": "എന്നാ ചെയ്യുവാ?",
-    "model": "gemini-3.8-flash-tts"
-  },
   "ml/whats-new.wav": {
     "text": "എന്നാ ഉണ്ട് വിശേഷം?",
     "model": "gemini-3.8-flash-tts"
@@ -135,20 +119,12 @@
     "text": "കാപ്പി കുടിച്ചോ?",
     "model": "gemini-3.8-flash-lite-tts"
   },
-  "ml/did-you-eat.wav": {
-    "text": "ചോറുണ്ടോ?",
-    "model": "gemini-3.8-flash-lite-tts"
-  },
   "ml/say-again.wav": {
     "text": "ഒന്നൂടെ പറയാമോ?",
     "model": "gemini-3.8-flash-lite-tts"
   },
   "ml/speak-slowly.wav": {
     "text": "പതുക്കെ പറയാമോ?",
-    "model": "gemini-3.8-flash-lite-tts"
-  },
-  "ml/took-medicine.wav": {
-    "text": "മരുന്ന് കഴിച്ചോ?",
     "model": "gemini-3.8-flash-lite-tts"
   },
   "ml/coming-home.wav": {
@@ -161,10 +137,6 @@
   },
   "en/whats-new.wav": {
     "text": "How do you say: What's new?",
-    "model": "gemini-3.8-flash-lite-tts"
-  },
-  "en/what-doing.wav": {
-    "text": "How do you say: What are you doing?",
     "model": "gemini-3.8-flash-lite-tts"
   },
   "en/what-happened.wav": {
@@ -181,10 +153,6 @@
   },
   "en/say-again.wav": {
     "text": "How do you say: Can you say that again?",
-    "model": "gemini-3.8-flash-lite-tts"
-  },
-  "en/took-medicine.wav": {
-    "text": "How do you say: Did you take your medicine?",
     "model": "gemini-3.8-flash-lite-tts"
   },
   "en/coming-home.wav": {

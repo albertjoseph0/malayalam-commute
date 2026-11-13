@@ -21,7 +21,7 @@ const MOCK_PORT = 8799, APP_PORT = 8788;
 const base = `http://localhost:${APP_PORT}`;
 
 const clip = async (id) => (await readFile(new URL(`../public/audio/ml/${id}.wav`, import.meta.url))).subarray(44); // 24 kHz PCM
-const tutorClips = [await clip("how-are-you"), await clip("did-you-eat")];
+const tutorClips = [await clip("amma-well"), await clip("amma-eat")];
 const TUTOR_LINES = ["സുഖമാണോ?", "ചോറുണ്ടോ?"];
 const LEARNER_LINE = "എനിക്ക് സുഖമാണ്";
 
@@ -119,7 +119,7 @@ page.on("request", (r) => { if (r.url().endsWith("/api/live-token")) tokenReques
 page.on("response", async (r) => { if (r.url().endsWith("/api/live-token")) tokenResponses.push(await r.json().catch(() => null)); });
 
 await page.goto(base);
-await page.evaluate(() => localStorage.setItem("malayalam-commute.progress.v1", JSON.stringify({ "how-are-you": { box: 1, due: 0 } })));
+await page.evaluate(() => localStorage.setItem("malayalam-commute.progress.v1", JSON.stringify({ "amma-well": { box: 1, due: 0 } })));
 
 const phases = [], tutorShown = new Set(), learnerShown = new Set();
 await page.exposeFunction("__seen", async (phase, ml, sub) => {
@@ -159,7 +159,7 @@ const first = log.filter((e) => e.n === 1).map((e) => e.type);
 const role = tokenResponses[0]?.scenario?.role;
 const checks = {
   "connected with a token and sent setup first, then the opening prompt": of("connect", 1)[0]?.hasToken && first[1] === "setup" && first[2] === "text",
-  "sent the learner's practised phrases when asking for a session": tokenRequests[0]?.known?.includes("how-are-you"),
+  "sent the learner's practised phrases when asking for a session": tokenRequests[0]?.known?.includes("amma-well"),
   "showed the scenario title": title === tokenResponses[0]?.scenario?.title,
   "showed both tutor lines": TUTOR_LINES.every((t) => tutorShown.has(t)),
   "showed who is speaking, then the learner's turn": phases.includes(`${role} is speaking`) && phases.includes("Your turn"),

@@ -1,34 +1,29 @@
 [
   { "id": "whats-new", "ml": "എന്നാ ഉണ്ട് വിശേഷം?", "roman": "ennaa undu vishesham", "en": "What's new?" },
-  { "id": "how-are-you", "ml": "സുഖമാണോ?", "roman": "sukhamaano", "en": "Are you well?" },
-  { "id": "im-fine", "ml": "എനിക്ക് സുഖമാണ്", "roman": "enikku sukhamaanu", "en": "I'm fine" },
   { "id": "amma-well", "ml": "അമ്മയ്ക്ക് സുഖമാണോ?", "roman": "ammaykku sukhamaano", "en": "Amma, are you well?" },
-  { "id": "what-doing", "ml": "എന്നാ ചെയ്യുവാ?", "roman": "ennaa cheyyuvaa", "en": "What are you doing?" },
-
+  { "id": "im-fine", "ml": "എനിക്ക് സുഖമാണ്", "roman": "enikku sukhamaanu", "en": "I'm fine" },
   { "id": "achan-doing", "ml": "അച്ഛൻ എന്നാ ചെയ്യുവാ?", "roman": "achan ennaa cheyyuvaa", "en": "Achan, what are you doing?" },
   { "id": "what-happened", "ml": "എന്നാ പറ്റി?", "roman": "ennaa patti", "en": "What happened?" },
-  { "id": "did-you-eat", "ml": "ചോറുണ്ടോ?", "roman": "chorundo", "en": "Did you eat?" },
+
   { "id": "amma-eat", "ml": "അമ്മ ചോറുണ്ടോ?", "roman": "amma chorundo", "en": "Amma, did you eat?" },
   { "id": "i-ate", "ml": "ഞാൻ കഴിച്ചു", "roman": "njaan kazhichu", "en": "I ate" },
-
   { "id": "had-coffee", "ml": "കാപ്പി കുടിച്ചോ?", "roman": "kaappi kudicho", "en": "Did you have your coffee?" },
   { "id": "hungry", "ml": "എനിക്ക് വിശക്കുന്നു", "roman": "enikku vishakkunnu", "en": "I'm hungry" },
   { "id": "want-tea", "ml": "എനിക്ക് ചായ വേണം", "roman": "enikku chaaya venam", "en": "I want tea" },
+
   { "id": "amma-tea", "ml": "അമ്മയ്ക്ക് ചായ വേണോ?", "roman": "ammaykku chaaya veno", "en": "Amma, do you want tea?" },
   { "id": "dont-want", "ml": "എനിക്ക് വേണ്ട", "roman": "enikku venda", "en": "I don't want it" },
-
   { "id": "little-enough", "ml": "കുറച്ച് മതി", "roman": "kurachu mathi", "en": "A little is enough" },
   { "id": "tasty", "ml": "നല്ല രുചിയുണ്ട്", "roman": "nalla ruchiyundu", "en": "It's tasty" },
   { "id": "where-amma", "ml": "അമ്മ എവിടെയാ?", "roman": "amma evideyaa", "en": "Where is Amma?" },
+
   { "id": "where-achan", "ml": "അച്ഛൻ എവിടെയാ?", "roman": "achan evideyaa", "en": "Where is Achan?" },
   { "id": "didnt-understand", "ml": "എനിക്ക് മനസ്സിലായില്ല", "roman": "enikku manassilaayilla", "en": "I didn't understand" },
-
   { "id": "say-again", "ml": "ഒന്നൂടെ പറയാമോ?", "roman": "onnoode parayaamo", "en": "Can you say that again?" },
   { "id": "speak-slowly", "ml": "പതുക്കെ പറയാമോ?", "roman": "pathukke parayaamo", "en": "Can you speak slowly?" },
   { "id": "dont-know", "ml": "എനിക്ക് അറിയില്ല", "roman": "enikku ariyilla", "en": "I don't know" },
-  { "id": "took-medicine", "ml": "മരുന്ന് കഴിച്ചോ?", "roman": "marunnu kazhicho", "en": "Did you take your medicine?" },
-  { "id": "achan-medicine", "ml": "അച്ഛൻ മരുന്ന് കഴിച്ചോ?", "roman": "achan marunnu kazhicho", "en": "Achan, did you take your medicine?" },
 
+  { "id": "achan-medicine", "ml": "അച്ഛൻ മരുന്ന് കഴിച്ചോ?", "roman": "achan marunnu kazhicho", "en": "Achan, did you take your medicine?" },
   { "id": "achan-well", "ml": "അച്ഛന് സുഖമാണോ?", "roman": "achanu sukhamaano", "en": "Achan, are you well?" },
   { "id": "coming-home", "ml": "ഞാൻ വീട്ടിലേക്ക് വരുവാ", "roman": "njaan veettilekku varuvaa", "en": "I'm coming home" },
   { "id": "call-tomorrow", "ml": "ഞാൻ നാളെ വിളിക്കാം", "roman": "njaan naale vilikkaam", "en": "I'll call tomorrow" }
