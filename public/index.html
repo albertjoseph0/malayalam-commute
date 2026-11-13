@@ -39,7 +39,10 @@
     font: inherit; font-size: 1.25rem; font-weight: 600; border: 0; border-radius: 999px;
     padding: 22px; width: 100%; background: var(--accent); color: var(--accent-fg); cursor: pointer;
   }
-  button.stop { background: transparent; color: var(--fg); border: 2px solid var(--line); }
+  button.quiet { background: transparent; color: var(--fg); border: 2px solid var(--line); }
+  button[hidden] { display: none; }
+  button:disabled { opacity: .5; }
+  #actions { display: flex; flex-direction: column; gap: 12px; }
   #note { color: var(--muted); font-size: .9rem; min-height: 2.9em; }
 </style>
 </head>
@@ -53,7 +56,11 @@
     <div id="roman"></div>
   </div>
   <div id="meter" aria-hidden="true"><div id="level"></div></div>
-  <button id="go">Start session</button>
+  <div id="actions">
+    <button id="drill">Start drill</button>
+    <button id="talk" class="quiet">Start conversation</button>
+    <button id="stop" class="quiet" hidden>Stop</button>
+  </div>
   <div id="note">Tap once, then it runs by voice. Keep this page open and the screen on.</div>
 </main>
 <script type="module" src="app.js"></script>

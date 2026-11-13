@@ -1,14 +1,62 @@
 {
-  "want-tea": { "ml": "എനിക്ക് കാപ്പി വേണം", "en": "I want coffee" },
-  "dont-know": { "ml": "എനിക്ക് അറിയാം", "en": "I know" },
-  "didnt-understand": { "ml": "എനിക്ക് മനസ്സിലായി", "en": "I understood" },
-  "call-tomorrow": { "ml": "ഞാൻ ഇന്ന് വിളിക്കാം", "en": "I'll call today" },
-  "i-ate": { "ml": "ഞാൻ കഴിച്ചില്ല", "en": "I didn't eat" },
-  "took-medicine": { "ml": "മരുന്ന് വേണോ?", "en": "Do you want medicine?" },
-  "im-fine": { "ml": "എനിക്ക് സുഖമില്ല", "en": "I'm not well" },
-  "tasty": { "ml": "നല്ല ചൂടുണ്ട്", "en": "It's very hot" },
-  "coming-home": { "ml": "ഞാൻ വീട്ടിലേക്ക് പോകുവാ", "en": "I'm going home" },
-  "little-enough": { "ml": "കുറച്ച് കൂടി വേണം", "en": "I want a little more" },
-  "whats-new": { "ml": "മഴ പെയ്യുന്നുണ്ട്", "en": "It's raining" },
-  "how-are-you": { "ml": "പുസ്തകം എവിടെ?", "en": "Where is the book?" }
+  "want-tea": {
+    "ml": "എനിക്ക് കാപ്പി വേണം",
+    "en": "I want coffee"
+  },
+  "dont-know": {
+    "ml": "എനിക്ക് അറിയാം",
+    "en": "I know"
+  },
+  "didnt-understand": {
+    "ml": "എനിക്ക് മനസ്സിലായി",
+    "en": "I understood"
+  },
+  "call-tomorrow": {
+    "ml": "ഞാൻ ഇന്ന് വിളിക്കാം",
+    "en": "I'll call today"
+  },
+  "i-ate": {
+    "ml": "ഞാൻ കഴിച്ചില്ല",
+    "en": "I didn't eat"
+  },
+  "took-medicine": {
+    "ml": "മരുന്ന് വേണോ?",
+    "en": "Do you want medicine?"
+  },
+  "im-fine": {
+    "ml": "എനിക്ക് സുഖമില്ല",
+    "en": "I'm not well"
+  },
+  "tasty": {
+    "ml": "നല്ല ചൂടുണ്ട്",
+    "en": "It's very hot"
+  },
+  "coming-home": {
+    "ml": "ഞാൻ വീട്ടിലേക്ക് പോകുവാ",
+    "en": "I'm going home"
+  },
+  "little-enough": {
+    "ml": "കുറച്ച് കൂടി വേണം",
+    "en": "I want a little more"
+  },
+  "whats-new": {
+    "ml": "മഴ പെയ്യുന്നുണ്ട്",
+    "en": "It's raining"
+  },
+  "how-are-you": {
+    "ml": "പുസ്തകം എവിടെ?",
+    "en": "Where is the book?"
+  },
+  "where-amma": {
+    "ml": "അമ്മ എവിടെ പോയി?",
+    "en": "Where did Amma go?"
+  },
+  "amma-tea": {
+    "ml": "അമ്മയ്ക്ക് കാപ്പി വേണോ?",
+    "en": "Amma, do you want coffee?"
+  },
+  "achan-medicine": {
+    "ml": "അച്ഛൻ ചോറുണ്ടോ?",
+    "en": "Achan, did you eat?"
+  }
 }

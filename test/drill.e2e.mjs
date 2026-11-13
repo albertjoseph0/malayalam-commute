@@ -54,14 +54,14 @@ await page.evaluate(() => {
   new MutationObserver(() => window.__phase(el.textContent)).observe(el, { childList: true, characterData: true, subtree: true });
 });
 
-await page.click("#go");
+await page.click("#drill");
 // Three phrases' worth of turns, then stop.
 const deadline = Date.now() + 150000;
 while (turn < script.length && Date.now() < deadline) await page.waitForTimeout(500);
 // Wait for the third phrase's result to be saved before stopping.
 await page.waitForFunction((id) => id in JSON.parse(localStorage.getItem("malayalam-commute.progress.v1") ?? "{}"), p3.id, { timeout: 40000 });
-await page.click("#go");
-await page.waitForFunction(() => document.getElementById("go").textContent === "Start session" && !document.getElementById("go").disabled, null, { timeout: 15000 });
+await page.click("#stop");
+await page.waitForFunction(() => !document.getElementById("drill").hidden, null, { timeout: 15000 });
 
 const progress = await page.evaluate(() => JSON.parse(localStorage.getItem("malayalam-commute.progress.v1")));
 const note = await page.textContent("#note");

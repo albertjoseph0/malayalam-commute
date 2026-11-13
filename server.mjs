@@ -1,11 +1,12 @@
-// Serves the drill page and grades recordings. The Gemini key stays on the
-// server; the browser only ever sends audio and receives a verdict.
+// Serves the page, grades drill recordings, and hands out short-lived tokens
+// for conversation sessions. The Gemini key stays on the server.
 
 import { createServer } from "node:http";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, extname, join, normalize, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { gradeAttempt } from "./lib/grading.mjs";
+import { SCENARIOS, nextScenario, openLiveSession } from "./lib/live.mjs";
 
 const root = dirname(fileURLToPath(import.meta.url));
 const publicDir = join(root, "public");
@@ -59,6 +60,17 @@ async function grade(req, res, url) {
   send(res, 200, { ...result, ms: Date.now() - started });
 }
 
+async function liveToken(req, res) {
+  let body;
+  try { body = JSON.parse((await readBody(req)).toString("utf8") || "{}"); }
+  catch { return send(res, 400, { error: "Expected JSON" }); }
+  // A reconnect names its scenario; a new session takes the one after the last.
+  const scenario = SCENARIOS.find((s) => s.id === body.scenario) ?? nextScenario(body.after);
+  const known = (Array.isArray(body.known) ? body.known : []).map((id) => byId.get(id)).filter(Boolean);
+  const handle = typeof body.handle === "string" && body.handle.length <= 4096 ? body.handle : undefined;
+  send(res, 200, await openLiveSession({ scenario, known, handle }));
+}
+
 async function serveStatic(res, pathname) {
   const rel = pathname === "/" ? "index.html" : decodeURIComponent(pathname.slice(1));
   const file = normalize(join(publicDir, rel));
@@ -81,13 +93,14 @@ const server = createServer(async (req, res) => {
   try {
     if (url.pathname === "/api/lesson" && req.method === "GET") return send(res, 200, phrases);
     if (url.pathname === "/api/grade" && req.method === "POST") return await grade(req, res, url);
+    if (url.pathname === "/api/live-token" && req.method === "POST") return await liveToken(req, res);
     if (req.method === "GET") return await serveStatic(res, url.pathname);
     send(res, 405, "Method not allowed", "text/plain");
   } catch (err) {
     console.error(err.message);
-    send(res, err.status ?? 502, { error: err.status ? err.message : "Grading failed" });
+    send(res, err.status ?? 502, { error: err.status ? err.message : "The speech service request failed" });
   }
 });
 
 const port = Number(process.env.PORT ?? 8787);
-server.listen(port, () => console.log(`Malayalam commute drill on http://localhost:${port}`));
+server.listen(port, () => console.log(`Malayalam Commute on http://localhost:${port}`));

@@ -194,5 +194,69 @@
   "en/call-tomorrow.wav": {
     "text": "How do you say: I'll call tomorrow",
     "model": "gemini-3.8-flash-lite-tts"
+  },
+  "ml/achan-doing.wav": {
+    "text": "അച്ഛൻ എന്നാ ചെയ്യുവാ?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "ml/amma-well.wav": {
+    "text": "അമ്മയ്ക്ക് സുഖമാണോ?",
+    "model": "gemini-3.8-flash-tts"
+  },
+  "ml/amma-tea.wav": {
+    "text": "അമ്മയ്ക്ക് ചായ വേണോ?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "ml/amma-eat.wav": {
+    "text": "അമ്മ ചോറുണ്ടോ?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "ml/where-amma.wav": {
+    "text": "അമ്മ എവിടെയാ?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "ml/where-achan.wav": {
+    "text": "അച്ഛൻ എവിടെയാ?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "ml/achan-well.wav": {
+    "text": "അച്ഛന് സുഖമാണോ?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "ml/achan-medicine.wav": {
+    "text": "അച്ഛൻ മരുന്ന് കഴിച്ചോ?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "en/amma-well.wav": {
+    "text": "How do you say: Amma, are you well?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "en/achan-doing.wav": {
+    "text": "How do you say: Achan, what are you doing?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "en/amma-tea.wav": {
+    "text": "How do you say: Amma, do you want tea?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "en/where-amma.wav": {
+    "text": "How do you say: Where is Amma?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "en/amma-eat.wav": {
+    "text": "How do you say: Amma, did you eat?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "en/where-achan.wav": {
+    "text": "How do you say: Where is Achan?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "en/achan-medicine.wav": {
+    "text": "How do you say: Achan, did you take your medicine?",
+    "model": "gemini-3.8-flash-lite-tts"
+  },
+  "en/achan-well.wav": {
+    "text": "How do you say: Achan, are you well?",
+    "model": "gemini-3.8-flash-lite-tts"
   }
 }

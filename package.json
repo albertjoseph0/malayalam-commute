@@ -3,8 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "NODE_USE_ENV_PROXY=1 node server.mjs",
-    "render": "NODE_USE_ENV_PROXY=1 node scripts/render-audio.mjs",
-    "test:grader": "NODE_USE_ENV_PROXY=1 node scripts/grader-test.mjs"
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "render": "node --env-file-if-exists=.env scripts/render-audio.mjs",
+    "test:grader": "node --env-file-if-exists=.env scripts/grader-test.mjs"
+  },
+  "devDependencies": {
+    "ws": "^8.23.0"
   }
 }
